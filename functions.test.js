@@ -24,7 +24,10 @@ test("checkValue Should be falsy when argument is undefined", () => {
 });
 
 test("User should be Brad Traversy object", () => {
-  expect(functions.createUser().firstName + " " + functions.createUser().lastName).toBe("Brad Traversy");
+  expect(functions.createUser()).toEqual({
+    firstName: "Brad", 
+    lastName: "Traversy"
+  });
 });
 
 // Tests zijn eigenlijk gewoon functies. Om dat te laten zien laten we je
@@ -39,7 +42,7 @@ test("Should be under or equal to 1600", () => {
 
 // Regex
 test("There is no I in team", () => {
-   expect("team").not.toMatch(/[I]+/g);
+   expect("team").not.toMatch(/[Ii]/g);
 });
 
 // Arrays
