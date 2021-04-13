@@ -19,9 +19,13 @@ test("Should be null", () => {
   expect(functions.isNull()).toBeNull();
 });
 
-test("checkValue Should be falsy when argument is undefined", () => {});
+test("checkValue Should be falsy when argument is undefined", () => {
+  expect(functions.checkValue()).toBeFalsy();
+});
 
-test("User should be Brad Traversy object", () => {});
+test("User should be Brad Traversy object", () => {
+  expect(functions.createUser().firstName + " " + functions.createUser().lastName).toBe("Brad Traversy");
+});
 
 // Tests zijn eigenlijk gewoon functies. Om dat te laten zien laten we je
 // nu tests maken die werken zonder input van buitenaf:
@@ -30,17 +34,17 @@ test("User should be Brad Traversy object", () => {});
 test("Should be under or equal to 1600", () => {
   const load1 = 800;
   const load2 = 800;
-  // expect(load1 + load2).toBe.....
+  expect(load1 + load2).toBeLessThanOrEqual(1600);
 });
 
 // Regex
 test("There is no I in team", () => {
-  //  expect('team').not.to..........;
+   expect("team").not.toMatch(/[I]+/g);
 });
 
 // Arrays
 test("Admin should be in usernames", () => {
   usernames = ["john", "karen", "admin"];
-  // expect(usernames).to......
+  expect(usernames).toContain("admin");
 });
 
